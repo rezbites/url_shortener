@@ -1,0 +1,75 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Shortener</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f4; 
+            text-align: center; 
+            padding-top: 50px; 
+        }
+        .container { 
+            background-color: #fff; 
+            padding: 20px; 
+            margin: auto; 
+            width: 50%; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+            border-radius: 8px;
+        }
+        input[type="url"] { 
+            width: 80%; 
+            padding: 10px; 
+            margin-bottom: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px;
+        }
+        button { 
+            padding: 10px 20px; 
+            background-color: #28a745; 
+            color: #fff; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer;
+        }
+        button:hover { 
+            background-color: #218838; 
+        }
+        .error { 
+            color: red; 
+            margin-top: 10px;
+        }
+        .short-url { 
+            margin-top: 20px; 
+        }
+        .short-url a { 
+            color: #007bff; 
+            text-decoration: none; 
+        }
+        .short-url a:hover { 
+            text-decoration: underline; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>URL Shortener</h1>
+        <form method="POST">
+            <input type="url" name="long_url" placeholder="Enter your URL here" required>
+            <br>
+            <button type="submit">Shorten</button>
+        </form>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        {% if short_url %}
+            <div class="short-url">
+                <p>Your shortened URL:</p>
+                <a href="{{ short_url }}" target="_blank">{{ short_url }}</a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

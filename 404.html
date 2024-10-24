@@ -1,0 +1,38 @@
+<!-- templates/404.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Not Found</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f4; 
+            text-align: center; 
+            padding-top: 100px; 
+        }
+        .container { 
+            background-color: #fff; 
+            padding: 20px; 
+            margin: auto; 
+            width: 40%; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+            border-radius: 8px;
+        }
+        a { 
+            color: #007bff; 
+            text-decoration: none; 
+        }
+        a:hover { 
+            text-decoration: underline; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404 - URL Not Found</h1>
+        <p>The URL you are trying to access does not exist.</p>
+        <a href="{{ url_for('index') }}">Go Back</a>
+    </div>
+</body>
+</html>
